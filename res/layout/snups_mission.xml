@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/bgml">
+
+      <Button
+            android:id="@+id/btn_new_mission"
+            android:layout_height="wrap_content"
+            android:text="Get new Mission" 
+            android:layout_width="200px" 
+            android:layout_x="65px" 
+            android:layout_y="250px"/>
+      <Button
+            android:id="@+id/btn_play_mission"
+            android:layout_height="wrap_content"
+            android:text="Play this Mission" 
+            android:layout_width="200px" 
+            android:layout_x="65px" 
+            android:layout_y="370px"
+            android:onClick="showCamera"/>
+
+	  <TextView 
+	  		android:layout_width="wrap_content" 
+	  		android:id="@+id/txt_mission" 
+	  		android:layout_height="wrap_content" 
+	  		android:text="Your current Mission:" 
+	  		android:textSize="20px" 
+	  		android:layout_x="65px" 
+	  		android:layout_y="300px">
+	  </TextView>
+	  
+	  <TextView 
+	  		android:layout_width="wrap_content" 
+	  		android:id="@+id/txt_current_mission" 
+	  		android:layout_height="wrap_content" 
+	  		android:text="Your current Mission" 
+	  		android:layout_y="330px" android:width="320dip" android:gravity="center_horizontal" android:textColor="#f00" android:textSize="16px">
+	  </TextView>
+</AbsoluteLayout>

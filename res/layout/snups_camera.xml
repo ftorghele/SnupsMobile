@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<SurfaceView android:id="@+id/surface_camera"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">		
+	</SurfaceView>
+	
+	      <Button
+            android:id="@+id/btn_take_picture"
+            android:layout_height="wrap_content"
+            android:text="Take Picture" 
+            android:layout_y="250px" 
+            android:onClick="takePicture" android:textSize="20px" android:layout_width="300px" android:layout_x="120px"/>
+</AbsoluteLayout>

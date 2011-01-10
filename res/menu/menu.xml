@@ -1,0 +1,4 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Tutorial" android:id="@+id/tutorial"></item>
+<item android:title="Quit" android:id="@+id/quit" android:icon="@+drawable/quit"></item>
+</menu>

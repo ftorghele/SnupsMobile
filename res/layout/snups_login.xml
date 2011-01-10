@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/bgml">
+
+      <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:layout_width="200px" 
+            android:layout_x="65px"
+            android:layout_y="370px"/>
+      <EditText
+            android:id="@+id/txt_username"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:layout_x="40px"
+            android:layout_y="250px"/>
+      <EditText
+            android:id="@+id/txt_password"
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:password="true"
+            android:layout_x="40px"
+            android:layout_y="300px" />
+</AbsoluteLayout>
