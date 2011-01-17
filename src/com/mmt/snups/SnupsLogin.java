@@ -14,7 +14,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -135,11 +134,10 @@ public class SnupsLogin extends Activity {
                 	  instream.close();
 
                 	  JSONObject json=new JSONObject(result);
+                	  
+                	  String status = json.get("status").toString();
 
-                	  JSONArray nameArray = json.names();
-                	  JSONArray valArray = json.toJSONArray(nameArray);
-
-	                  if (valArray.getString(0).equals("SUCCESS")) {
+	                  if (status.equals("SUCCESS")) {
 	                        // Store the username and password in SharedPreferences after the successful login
 	                        SharedPreferences.Editor editor=mPreferences.edit();
 	                        editor.putString("UserName", username);
@@ -148,7 +146,7 @@ public class SnupsLogin extends Activity {
 	                        Message myMessage=new Message();
 	                        myMessage.obj="SUCCESS";
 	                        loginHandler.sendMessage(myMessage);
-	                  } else if(valArray.getString(0).equals("ERROR")) {
+	                  } else if(status.equals("ERROR")) {
 	                	    Message myMessage=new Message();
 	                        myMessage.obj="ERROR";
 	                        loginHandler.sendMessage(myMessage);

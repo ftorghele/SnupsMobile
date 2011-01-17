@@ -9,7 +9,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -84,6 +83,7 @@ public class SnupsMission extends Activity {
         @Override
         public void handleMessage(Message msg) {
               String loginmsg=(String)msg.obj;
+              
               if(loginmsg.equals("SUCCESS")) {
                     removeDialog(0);
                     loadSavedMission();
@@ -125,15 +125,13 @@ public class SnupsMission extends Activity {
           	  instream.close();
 
           	  JSONObject json=new JSONObject(result);
-
-          	  JSONArray nameArray = json.names();
-          	  JSONArray valArray = json.toJSONArray(nameArray);
           	  
-          	  if (valArray.getString(1).equals("SUCCESS")) {
-	                
+          	  String status = json.get("status").toString();
+          	  
+          	  if (status.equals("SUCCESS")) {
                   SharedPreferences.Editor editor=mPreferences.edit();
-                  editor.putString("MissionName", valArray.getString(2));
-                  editor.putString("MissionId", valArray.getString(0));
+                  editor.putString("MissionName", json.get("title").toString());
+                  editor.putString("MissionId", json.get("id").toString());
                   editor.commit();
 	              Message myMessage=new Message();
 	              myMessage.obj="SUCCESS";

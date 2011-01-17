@@ -15,7 +15,6 @@ import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -48,6 +47,8 @@ public class SnupsUpload extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        
         setContentView(R.layout.snups_upload);
         
         if(imageFile.exists()){
@@ -131,10 +132,9 @@ public class SnupsUpload extends Activity {
 
               	  JSONObject json=new JSONObject(result);
 
-              	  JSONArray nameArray = json.names();
-              	  JSONArray valArray = json.toJSONArray(nameArray);
+              	  String status = json.get("status").toString();
 
-	                  if (valArray.getString(0).equals("SUCCESS")) {
+	                  if (status.equals("SUCCESS")) {
 	                        Message myMessage=new Message();
 	                        myMessage.obj="SUCCESS";
 	                        uploadHandler.sendMessage(myMessage);
