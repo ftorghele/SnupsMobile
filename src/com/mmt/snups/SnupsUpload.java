@@ -2,6 +2,8 @@ package com.mmt.snups;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,11 +23,13 @@ import org.json.JSONObject;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -42,19 +46,33 @@ public class SnupsUpload extends Activity {
     Thread t;
     private SharedPreferences mPreferences;
     ProgressDialog dialog;
-    File imageFile = new File("/sdcard/image.jpg");
-	
+    File imageFile;
+    
+    private Context mContext = this;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        
         setContentView(R.layout.snups_upload);
         
+        String internalStoragePath = mContext.getFilesDir().toString();
+		String filePath = internalStoragePath + "/" + "image.jpeg";
+        
+        imageFile = new File(filePath);
+        
+        Log.v("imageFile:", imageFile.toString());
+        Log.v("imagePath:", filePath);
+        
         if(imageFile.exists()){
-        	Bitmap myBitmap = BitmapFactory.decodeFile("/sdcard/image.jpg");
+        	Log.v("file: ", "exists");
+        	Bitmap myBitmap = BitmapFactory.decodeFile(imageFile.toString());
         	ImageView myImage = (ImageView) findViewById(R.id.SnupsImage);
         	myImage.setImageBitmap(myBitmap);
+        }
+        else
+        {
+        	Log.v("file:", "doesn't exist");
         }
     }
     

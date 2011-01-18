@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.Buffer;
 
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +18,7 @@ import android.graphics.PixelFormat;
 import android.graphics.Bitmap.CompressFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -137,29 +140,29 @@ public class SnupsCamera extends Activity implements SurfaceHolder.Callback {
 	
 	public static boolean StoreByteImage(Context mContext, byte[] imageData,
 			int quality) {
+		
+		String filePath = "image.jpeg";
+		
+		Log.v("filePath:", filePath);
 
-        File sdImageMainDirectory = new File("/sdcard");
-		FileOutputStream fileOutputStream = null;
-		try {
-
+		try {			
+			//create filestream
+			FileOutputStream fos = mContext.openFileOutput(filePath,
+														Context.MODE_WORLD_WRITEABLE);
+			
+			//create bitmap from byte-array
 			BitmapFactory.Options options=new BitmapFactory.Options();
 			options.inSampleSize = 1;
 			
 			Bitmap myImage = BitmapFactory.decodeByteArray(imageData, 0,
 					imageData.length,options);
-
 			
-			fileOutputStream = new FileOutputStream(
-					sdImageMainDirectory.toString() +"/image.jpg");
-							
-  
-			BufferedOutputStream bos = new BufferedOutputStream(
-					fileOutputStream);
+			myImage.compress(CompressFormat.JPEG, quality, fos);
+			
+			fos.flush();
 
-			myImage.compress(CompressFormat.JPEG, quality, bos);
-
-			bos.flush();
-			bos.close();
+//			needed?:
+//			fos.close();
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -168,20 +171,9 @@ public class SnupsCamera extends Activity implements SurfaceHolder.Callback {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return true;
 	}
-    
-    
-    
-	
-	
-	
-	
-	
-	
-	
-	
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
