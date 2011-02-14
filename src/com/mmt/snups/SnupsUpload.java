@@ -2,8 +2,6 @@ package com.mmt.snups;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,7 +27,6 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -110,7 +107,7 @@ public class SnupsUpload extends Activity {
           Log.v(TAG, "Trying to upload");
           
           DefaultHttpClient client = new DefaultHttpClient();
-          HttpPost httppost = new HttpPost("http://franzonrails.multimediatechnology.at/images");
+          HttpPost httppost = new HttpPost("http://snups.multimediatechnology.at/images");
           
           try {
         	    MultipartEntity p_entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);

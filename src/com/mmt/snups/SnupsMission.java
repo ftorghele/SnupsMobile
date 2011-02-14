@@ -98,7 +98,7 @@ public class SnupsMission extends Activity {
 	private void tryGetMission() {
         Log.v(TAG, "Trying to get Mission");
         DefaultHttpClient client = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet("http://franzonrails.multimediatechnology.at/mobile/mission");
+        HttpGet httpget = new HttpGet("http://snups.multimediatechnology.at/mobile/mission");
 
         try {
             HttpResponse response = client.execute(httpget);

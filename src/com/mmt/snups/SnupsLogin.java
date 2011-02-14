@@ -103,7 +103,7 @@ public class SnupsLogin extends Activity {
             String username = etxt_user.getText().toString();
             String password = etxt_pass.getText().toString();
             DefaultHttpClient client = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://franzonrails.multimediatechnology.at/mobile/login");
+            HttpPost httppost = new HttpPost("http://snups.multimediatechnology.at/mobile/login");
             List<BasicNameValuePair> userData = new ArrayList<BasicNameValuePair>();
             userData.add(new BasicNameValuePair("username", username));
             userData.add(new BasicNameValuePair("password", password));
