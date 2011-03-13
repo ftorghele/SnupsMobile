@@ -107,7 +107,7 @@ public class SnupsUpload extends Activity {
           Log.v(TAG, "Trying to upload");
           
           DefaultHttpClient client = new DefaultHttpClient();
-          HttpPost httppost = new HttpPost("http://snups.multimediatechnology.at/images");
+          HttpPost httppost = new HttpPost("http://franzonrails.multimediatechnology.at/images");
           
           try {
         	    MultipartEntity p_entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
@@ -115,10 +115,10 @@ public class SnupsUpload extends Activity {
         	    mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         	    Charset chars = Charset.forName("UTF-8");
 
-        	    p_entity.addPart("image", new FileBody(imageFile));
-        	    p_entity.addPart("username", new StringBody(mPreferences.getString("UserName", ""), chars));
-        	    p_entity.addPart("password", new StringBody(mPreferences.getString("PassWord", ""), chars));
-        	    p_entity.addPart("mission_id", new StringBody(mPreferences.getString("MissionId", ""), chars));
+        	    p_entity.addPart("image[image_data]", new FileBody(imageFile));
+        	    p_entity.addPart("image[username]", new StringBody(mPreferences.getString("UserName", ""), chars));
+        	    p_entity.addPart("image[password]", new StringBody(mPreferences.getString("PassWord", ""), chars));
+        	    p_entity.addPart("image[mission_id]", new StringBody(mPreferences.getString("MissionId", ""), chars));
 
         	    httppost.setEntity(p_entity);
    

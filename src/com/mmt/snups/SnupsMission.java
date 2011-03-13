@@ -98,7 +98,7 @@ public class SnupsMission extends Activity {
 	private void tryGetMission() {
         Log.v(TAG, "Trying to get Mission");
         DefaultHttpClient client = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet("http://snups.multimediatechnology.at/mobile/mission");
+        HttpGet httpget = new HttpGet("http://franzonrails.multimediatechnology.at/mobile/mission");
 
         try {
             HttpResponse response = client.execute(httpget);
@@ -189,8 +189,10 @@ public class SnupsMission extends Activity {
     @Override 
     public boolean onKeyDown(int keyCode, KeyEvent event) { 
         if (keyCode == KeyEvent.KEYCODE_BACK) { 
-                // your code here 
-                return true; 
+            Intent intent=new Intent(getApplicationContext(),SnupsMenu.class);
+            startActivity(intent);
+            finish();
+            return true; 
         } 
         return super.onKeyDown(keyCode, event); 
     } 

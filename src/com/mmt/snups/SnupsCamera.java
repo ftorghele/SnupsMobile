@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PixelFormat;
 import android.graphics.Bitmap.CompressFormat;
 import android.hardware.Camera;
 import android.os.Bundle;
@@ -21,8 +20,6 @@ import android.view.MenuItem;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 public class SnupsCamera extends Activity implements SurfaceHolder.Callback {
 
@@ -37,12 +34,6 @@ public class SnupsCamera extends Activity implements SurfaceHolder.Callback {
 
 		Log.e(TAG, "onCreate");
 
-//		Bundle extras = getIntent().getExtras();
-
-		getWindow().setFormat(PixelFormat.TRANSLUCENT);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-		WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.snups_camera);
 		mSurfaceView = (SurfaceView) findViewById(R.id.surface_camera);
 		mSurfaceHolder = mSurfaceView.getHolder();
@@ -90,31 +81,31 @@ public class SnupsCamera extends Activity implements SurfaceHolder.Callback {
 	}
 
 	public void surfaceCreated(SurfaceHolder holder) {
-		Log.e(TAG, "surfaceCreated");	
+		Log.e(TAG, "surfaceCreated");
+        
 		mCamera = Camera.open();
-
 	}
 
 	public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
 		Log.e(TAG, "surfaceChanged");
-
-		// XXX stopPreview() will crash if preview is not running
+		
 		if (mPreviewRunning) {
 			mCamera.stopPreview();
 		}
 
 		Camera.Parameters p = mCamera.getParameters();
-		 p.setPreviewSize(w, h);// here w h are reversed
+		p.setPreviewSize(w, h);
 		mCamera.setParameters(p);
+
 		try {
 			mCamera.setPreviewDisplay(holder);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		mCamera.startPreview();
 		mPreviewRunning = true;
 	}
+
 
 	public void surfaceDestroyed(SurfaceHolder holder) {
 		Log.e(TAG, "surfaceDestroyed");

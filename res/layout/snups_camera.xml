@@ -2,17 +2,22 @@
 <AbsoluteLayout
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      xmlns:android="http://schemas.android.com/apk/res/android" >
+      xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/bg" android:id="@+id/layout_camera">
 
 	<SurfaceView android:id="@+id/surface_camera"
-		android:layout_width="fill_parent" android:layout_height="fill_parent"
-		android:layout_weight="1">		
+		android:layout_weight="1" 
+		android:layout_width="260px" 
+		android:layout_height="195px" 
+		android:layout_x="30px" 
+		android:layout_y="70px">		
 	</SurfaceView>
 	
 	      <Button
             android:id="@+id/btn_take_picture"
             android:layout_height="wrap_content"
             android:text="Take Picture" 
-            android:layout_y="250px" 
-            android:onClick="takePicture" android:textSize="20px" android:layout_width="300px" android:layout_x="120px"/>
+            android:layout_width="200px" 
+            android:layout_x="65px" 
+            android:layout_y="300px"
+            android:onClick="takePicture"/>
 </AbsoluteLayout>

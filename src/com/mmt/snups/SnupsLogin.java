@@ -85,7 +85,7 @@ public class SnupsLogin extends Activity {
                   String loginmsg=(String)msg.obj;
                   if(loginmsg.equals("SUCCESS")) {
                         removeDialog(0);
-                        Intent intent = new Intent(getApplicationContext(), SnupsMission.class);
+                        Intent intent = new Intent(getApplicationContext(), SnupsMenu.class);
                         startActivity(intent);
                         finish();
                   } else {
@@ -103,7 +103,7 @@ public class SnupsLogin extends Activity {
             String username = etxt_user.getText().toString();
             String password = etxt_pass.getText().toString();
             DefaultHttpClient client = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost("http://snups.multimediatechnology.at/mobile/login");
+            HttpPost httppost = new HttpPost("http://franzonrails.multimediatechnology.at/mobile/login");
             List<BasicNameValuePair> userData = new ArrayList<BasicNameValuePair>();
             userData.add(new BasicNameValuePair("username", username));
             userData.add(new BasicNameValuePair("password", password));
@@ -202,8 +202,10 @@ public class SnupsLogin extends Activity {
       @Override 
       public boolean onKeyDown(int keyCode, KeyEvent event) { 
           if (keyCode == KeyEvent.KEYCODE_BACK) { 
-                  // your code here 
-                  return true; 
+	            Intent intent=new Intent(getApplicationContext(),SnupsStart.class);
+	            startActivity(intent);
+	            finish();
+                return true; 
           } 
           return super.onKeyDown(keyCode, event); 
       } 

@@ -9,26 +9,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-public class SnupsStart extends Activity {
+public class SnupsMenu extends Activity {
     /** Called when the activity is first created. */
-	
-	
+    
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.snups_start);
-    }
+        
+        setContentView(R.layout.snups_menu);
+    }    
     
-    public void showTutorial(View view) {
-    	TutorialDialog tutorialDialog = new TutorialDialog(this);
-    	tutorialDialog.show();
-    }
-    
-    public void showLogin(View view) {
-        Intent intent=new Intent(getApplicationContext(),SnupsLogin.class);
+    public void playMission(View view) {
+        Intent intent=new Intent(getApplicationContext(),SnupsMission.class);
         startActivity(intent);
         finish();
     }
+    
+    public void viewPhotoStream(View view) {
+        Intent intent=new Intent(getApplicationContext(),SnupsPhotoStream.class);
+        startActivity(intent);
+        finish();
+    } 
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,9 +57,9 @@ public class SnupsStart extends Activity {
     @Override 
     public boolean onKeyDown(int keyCode, KeyEvent event) { 
         if (keyCode == KeyEvent.KEYCODE_BACK) { 
-                finish();
-                return true; 
+            finish();
+            return true; 
         } 
         return super.onKeyDown(keyCode, event); 
-    } 
+    }  
 }

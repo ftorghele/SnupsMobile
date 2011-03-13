@@ -6,10 +6,10 @@
       
 	  <ImageView 
 	  		android:layout_y="70px" 
-	  		android:layout_height="200px" 
+	  		android:layout_height="195px" 
 	  		android:id="@+id/SnupsImage" 
-	  		android:layout_x="10px" 
-	  		android:layout_width="300px"/>
+	  		android:layout_x="30px" 
+	  		android:layout_width="260px"/>
       <Button
             android:id="@+id/btn_newImage"
             android:layout_height="wrap_content"
