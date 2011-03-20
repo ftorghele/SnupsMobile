@@ -3,6 +3,7 @@ package com.mmt.snups;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,7 +11,7 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class SnupsPhotoStream extends Activity {
+public class SnupsPhotoStream extends Activity {	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,7 @@ public class SnupsPhotoStream extends Activity {
         setContentView(R.layout.snups_photo_stream);
  
         WebView web = (WebView) findViewById(R.id.webView);
-        web.getSettings().setJavaScriptEnabled(true); 
+        web.getSettings().setJavaScriptEnabled(false); 
         web.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
         web.getSettings().setPluginsEnabled(false);
         web.getSettings().setSupportMultipleWindows(false);
@@ -27,13 +28,15 @@ public class SnupsPhotoStream extends Activity {
         web.setHorizontalScrollBarEnabled(false);
  
         //Our application's main page will be loaded
-        web.loadUrl("http://franzonrails.multimediatechnology.at");
+        web.loadUrl("http://franzonrails.multimediatechnology.at/mobile/home");
  
         web.setWebViewClient(new WebViewClient() {
             @Override public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            	Log.v("URL: ", url);
                 return false;
             }
-        });
+        }); 
+        
     }
     
     @Override
