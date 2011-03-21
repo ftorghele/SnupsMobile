@@ -160,7 +160,7 @@ public class SnupsMission extends Activity {
     
     public void showCamera(View view) {
         Intent intent=new Intent(getApplicationContext(),SnupsCamera.class);
-        startActivity(intent);
+    	startActivity(intent);
         finish();
     }
     

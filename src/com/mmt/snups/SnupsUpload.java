@@ -166,17 +166,12 @@ public class SnupsUpload extends Activity {
 				e.printStackTrace();
 			}
     }
-
-
-    
-    
-    
     
     public void takeNewImage(View view) {
-        Intent intent=new Intent(getApplicationContext(),SnupsCamera.class);
+    	Intent intent=new Intent(getApplicationContext(),SnupsCamera.class);
         startActivity(intent);
         finish();
-    }  
+    }
 
     public void uploadImage(View view) {
         showDialog(0);
