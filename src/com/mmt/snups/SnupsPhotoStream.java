@@ -2,7 +2,10 @@ package com.mmt.snups;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,6 +17,7 @@ import android.webkit.WebViewClient;
  
 public class SnupsPhotoStream extends Activity
 {
+	private SharedPreferences mPreferences;
     final Activity activity = this;
  
     @Override
@@ -36,18 +40,31 @@ public class SnupsPhotoStream extends Activity
         });
  
         webView.setWebViewClient(new WebViewClient() {
-            @Override
+        	@Override
+        	public boolean shouldOverrideUrlLoading(WebView view, String url) {               
+        		if (Uri.parse(url).getHost().equals("franzonrails.multimediatechnology.at")) {
+                    // This is my web site, so do not override; let my WebView load the page
+                    return false;
+                }
+        		view.loadUrl(url);
+                return true;
+            }
+        	
+        	@Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl)
             {
                 // Handle the error
             }
+            
+            
  
 
 
         });
- 
+        mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         
-        webView.loadUrl("file:///android_asset/www/photostream.html");
+        webView.loadUrl("http://franzonrails.multimediatechnology.at/mobilehome?auth_token=" + mPreferences.getString("Token", ""));
+        //webView.loadUrl("file:///android_asset/www/photostream.html");
     }
 
     

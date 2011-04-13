@@ -142,6 +142,7 @@ public class SnupsLogin extends Activity {
 	                        SharedPreferences.Editor editor=mPreferences.edit();
 	                        editor.putString("UserName", username);
 	                        editor.putString("PassWord", password);
+	                        editor.putString("Token", json.getString("token").toString());
 	                        editor.commit();
 	                        Message myMessage=new Message();
 	                        myMessage.obj="SUCCESS";
