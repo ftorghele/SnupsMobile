@@ -16,7 +16,19 @@
 		
 		<View android:id="@+id/webViewTopButtons"
 			android:layout_width="270px"  
-			android:layout_height="85px"/>
+			android:layout_height="75px"/>
+		
+		<TextView 
+	  		android:layout_width="wrap_content" 
+	  		android:id="@+id/txt_heading" 
+	  		android:layout_height="wrap_content" 
+	  		android:text="" 
+	  		android:textSize="20px">
+	  	</TextView>
+		  	
+		
+			
+		
 				
 		<WebView android:id="@+id/webView"
 			android:layout_width="fill_parent"  

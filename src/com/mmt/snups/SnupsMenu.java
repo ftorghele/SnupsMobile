@@ -26,8 +26,26 @@ public class SnupsMenu extends Activity {
         finish();
     }
     
-    public void viewPhotoStream(View view) {
-        Intent intent=new Intent(getApplicationContext(),SnupsPhotoStream.class);
+    public void viewProfile(View view) {
+        Intent intent=new Intent(getApplicationContext(),PhotoStream.class);
+        intent.putExtra("photostream", "own");
+        intent.putExtra("title", "My Pictures");
+        startActivity(intent);        
+        finish();
+    }
+    
+    public void viewLatestPictures(View view) {
+        Intent intent=new Intent(getApplicationContext(),PhotoStream.class);
+        intent.putExtra("photostream", "latest");
+        intent.putExtra("title", "Latest Pictures");
+        startActivity(intent);
+        finish();
+    } 
+    
+    public void viewFavorites(View view) {
+        Intent intent=new Intent(getApplicationContext(),PhotoStream.class);
+        intent.putExtra("photostream", "fav");
+        intent.putExtra("title", "My Favorites");
         startActivity(intent);
         finish();
     } 

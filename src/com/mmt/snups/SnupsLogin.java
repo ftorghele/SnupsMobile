@@ -151,7 +151,7 @@ public class SnupsLogin extends Activity {
 	                	    Message myMessage=new Message();
 	                        myMessage.obj="ERROR";
 	                        loginHandler.sendMessage(myMessage);
-	                  } else {
+	                   } else {
 	                	    Message myMessage=new Message();
 	                        myMessage.obj="OTHER";
 	                        loginHandler.sendMessage(myMessage);

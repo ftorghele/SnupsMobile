@@ -13,10 +13,12 @@ import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
  
-public class SnupsPhotoStream extends Activity
+public class PhotoStream extends Activity
 {
 	private SharedPreferences mPreferences;
+	private String photostream; 
     final Activity activity = this;
  
     @Override
@@ -27,6 +29,11 @@ public class SnupsPhotoStream extends Activity
         setContentView(R.layout.snups_photo_stream);
         WebView webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        photostream = getIntent().getExtras().getString("photostream");
+        
+        TextView textView = (TextView) findViewById(R.id.txt_heading);
+        
+        textView.setText(getIntent().getExtras().getString("title"));
  
         webView.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView view, int progress)
@@ -54,15 +61,12 @@ public class SnupsPhotoStream extends Activity
             {
                 // Handle the error
             }
-            
-            
- 
-
+                     
 
         });
         mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         
-        webView.loadUrl("http://franzonrails.multimediatechnology.at/mobilehome?auth_token=" + mPreferences.getString("Token", ""));
+        webView.loadUrl("http://franzonrails.multimediatechnology.at/mobile/" + photostream + "?auth_token=" + mPreferences.getString("Token", ""));
     }
 
     

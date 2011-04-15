@@ -10,15 +10,31 @@
             android:text="Play Mission" 
             android:layout_width="200px" 
             android:layout_x="60px" 
-            android:layout_y="230px"
+            android:layout_y="220px"
             android:onClick="playMission"/>
 	  <Button
             android:id="@+id/btn_view_photo_stream"
             android:layout_height="wrap_content"
-            android:text="View Photo Stream" 
+            android:text="Latest Pictures" 
             android:layout_width="200px" 
             android:layout_x="60px" 
-            android:layout_y="300px"
-			android:onClick="viewPhotoStream"/>
+            android:layout_y="270px"
+			android:onClick="viewLatestPictures"/>
+	  <Button
+            android:id="@+id/btn_view_photo_stream"
+            android:layout_height="wrap_content"
+            android:text="Own Pictures" 
+            android:layout_width="200px" 
+            android:layout_x="60px" 
+            android:layout_y="320px"
+			android:onClick="viewProfile"/>
+	  <Button
+            android:id="@+id/btn_view_photo_stream"
+            android:layout_height="wrap_content"
+            android:text="My Favorites" 
+            android:layout_width="200px" 
+            android:layout_x="60px" 
+            android:layout_y="370px"
+			android:onClick="viewFavorites"/>
 
 </AbsoluteLayout>
