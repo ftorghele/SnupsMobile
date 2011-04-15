@@ -54,7 +54,7 @@ public class SnupsUpload extends Activity {
         setContentView(R.layout.snups_upload);
         
         String internalStoragePath = mContext.getFilesDir().toString();
-		String filePath = internalStoragePath + "/" + "image.jpeg";
+		String filePath = internalStoragePath + "/" + "snupsImage.jpeg";
         
         imageFile = new File(filePath);
         
