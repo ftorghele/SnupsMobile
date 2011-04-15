@@ -18,16 +18,10 @@
 			android:layout_width="270px"  
 			android:layout_height="85px"/>
 				
-		<ScrollView android:id="@+id/ScrollView01" 
-	        android:layout_width="fill_parent" 
-	        xmlns:android="http://schemas.android.com/apk/res/android" 
-	        android:layout_height="fill_parent">
-		
-			<WebView android:id="@+id/webView"
-				android:layout_width="fill_parent"  
-				android:layout_height="fill_parent"/>
+		<WebView android:id="@+id/webView"
+			android:layout_width="fill_parent"  
+			android:layout_height="fill_parent"/>
 	
-		</ScrollView>
 		<View android:id="@+id/webViewButtons"
 			android:layout_width="fill_parent"  
 			android:layout_height="63px"/>

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -64,7 +63,6 @@ public class SnupsPhotoStream extends Activity
         mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
         
         webView.loadUrl("http://franzonrails.multimediatechnology.at/mobilehome?auth_token=" + mPreferences.getString("Token", ""));
-        //webView.loadUrl("file:///android_asset/www/photostream.html");
     }
 
     
