@@ -26,6 +26,14 @@ public class SnupsMenu extends Activity {
         finish();
     }
     
+    public void newMission(View view) {
+        Intent intent=new Intent(getApplicationContext(),PhotoStream.class);
+        intent.putExtra("photostream", "newmission");
+        intent.putExtra("title", "New Mission");
+        startActivity(intent);        
+        finish();
+    }
+    
     public void viewProfile(View view) {
         Intent intent=new Intent(getApplicationContext(),PhotoStream.class);
         intent.putExtra("photostream", "own");

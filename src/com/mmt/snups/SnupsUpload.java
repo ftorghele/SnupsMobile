@@ -54,7 +54,7 @@ public class SnupsUpload extends Activity {
         setContentView(R.layout.snups_upload);
         
         String internalStoragePath = mContext.getFilesDir().toString();
-		String filePath = internalStoragePath + "/" + "snupsImage.jpeg";
+		String filePath = internalStoragePath + "/" + "image.jpeg";
         
         imageFile = new File(filePath);
         
@@ -166,12 +166,17 @@ public class SnupsUpload extends Activity {
 				e.printStackTrace();
 			}
     }
+
+
+    
+    
+    
     
     public void takeNewImage(View view) {
-    	Intent intent=new Intent(getApplicationContext(),SnupsCamera.class);
+        Intent intent=new Intent(getApplicationContext(),SnupsCamera.class);
         startActivity(intent);
         finish();
-    }
+    }  
 
     public void uploadImage(View view) {
         showDialog(0);
