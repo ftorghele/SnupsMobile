@@ -7,7 +7,7 @@
       <Button
             android:id="@+id/btn_new_mission"
             android:layout_height="wrap_content"
-            android:text="Show Tutorial" 
+            android:text="Show Info" 
             android:layout_width="200px" 
             android:layout_x="65px" 
             android:layout_y="220px" 
@@ -20,4 +20,12 @@
             android:layout_x="65px" 
             android:layout_y="300px"
 			android:onClick="showLogin"/>
+	  <Button
+            android:id="@+id/btn_registration"
+            android:layout_height="wrap_content"
+            android:text="Registrate" 
+            android:layout_width="200px" 
+            android:layout_x="65px" 
+            android:layout_y="380px"
+			android:onClick="showRegistrate"/>
 </AbsoluteLayout>

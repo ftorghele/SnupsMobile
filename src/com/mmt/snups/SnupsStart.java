@@ -1,7 +1,10 @@
 package com.mmt.snups;
 
+import java.security.KeyStore.LoadStoreParameter;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -27,6 +30,13 @@ public class SnupsStart extends Activity {
     public void showLogin(View view) {
         Intent intent=new Intent(getApplicationContext(),SnupsLogin.class);
         startActivity(intent);
+        finish();
+    }
+    
+    public void showRegistrate(View view) {
+    	Uri uriUrl = Uri.parse("http://franzonrails.multimediatechnology.at/users/register");
+    	Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl); 
+    	startActivity(launchBrowser);          
         finish();
     }
     

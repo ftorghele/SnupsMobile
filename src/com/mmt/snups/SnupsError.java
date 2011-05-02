@@ -1,6 +1,8 @@
 package com.mmt.snups;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -12,6 +14,14 @@ import android.widget.TextView;
 
 public class SnupsError extends Activity {
       Button okButton;
+      
+      public void showForgottenPW(View view) {
+      	Uri uriUrl = Uri.parse("http://franzonrails.multimediatechnology.at/users/password/new");
+      	Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl); 
+      	startActivity(launchBrowser);          
+          finish();
+      }
+      
       @Override
       public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
