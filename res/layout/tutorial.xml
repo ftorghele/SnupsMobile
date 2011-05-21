@@ -13,7 +13,7 @@
 		
 	<TextView android:id="@+id/TextView02" android:layout_height="wrap_content"
 		android:textColor="#fff" android:layout_width="wrap_content"
-		android:layout_margin="7dip" android:text="After the login you came to the main menu. \n\nPlay mission\n Get your mission. You can choose between Play this mission or Get new Mission. \n\nLatest Pictures\n Get a Photostream of the latest Pictures. \n\nOwn Pictures:\n Get a Photostream of your own pictures. \n\nMy Favorites\n Get a Photostream of pictures from people you follow. \n\nNew Mission\n Suggest a new mission. "
+		android:layout_margin="7dip" android:text="After login you get to the main menu. \n\nPlay mission:\n You get a new mission. You can choose between playing this mission or get a new one. \n\nLatest Pictures:\n Here you can see the latest pictures. \n\nOwn Pictures:\n Get a stream of your own pictures. \n\nMy Favorites:\n Get a stream of pictures from people you follow. \n\nNew Mission:\n Suggest a new mission. \n\nSnups is a project, that was created at the University of Applied Sciences in Salzburg. It was a corporation of the courses Multimedia Technology and Multimedia Art."
 		android:gravity="center"></TextView>
 		</ScrollView>
 	<Button android:layout_height="wrap_content" android:text="OK" android:id="@+id/OkButton" android:layout_width="fill_parent"></Button>

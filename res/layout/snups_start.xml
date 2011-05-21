@@ -23,7 +23,7 @@
 	  <Button
             android:id="@+id/btn_registration"
             android:layout_height="wrap_content"
-            android:text="Registrate" 
+            android:text="Register" 
             android:layout_width="200px" 
             android:layout_x="65px" 
             android:layout_y="380px"
