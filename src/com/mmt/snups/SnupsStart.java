@@ -1,7 +1,5 @@
 package com.mmt.snups;
 
-import java.security.KeyStore.LoadStoreParameter;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
