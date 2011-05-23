@@ -2,7 +2,7 @@
 <AbsoluteLayout
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      xmlns:android="http://schemas.android.com/apk/res/android" android:background="@drawable/bgml">
+      android:background="@drawable/bgml" xmlns:android="http://schemas.android.com/apk/res/android">
 
       <Button
             android:id="@+id/btn_play_mission"
@@ -12,29 +12,38 @@
             android:layout_x="60px" 
             android:layout_y="220px"
             android:onClick="playMission"/>
+      <TextView
+	  		android:layout_width="wrap_content" 
+	  		android:layout_height="wrap_content" 
+	  		android:id="@+id/streams" 
+	  		android:layout_x="100px" 
+	  		android:layout_y="280px"
+	  		android:text="Show Pictures"
+	  		android:textSize="18px"
+	  		android:textColor="#000" />
 	  <Button
             android:id="@+id/btn_view_photo_stream"
             android:layout_height="wrap_content"
-            android:text="Latest Pictures" 
-            android:layout_width="200px" 
+            android:text="Latest" 
+            android:layout_width="66px" 
             android:layout_x="60px" 
-            android:layout_y="270px"
+            android:layout_y="310px"
 			android:onClick="viewLatestPictures"/>
 	  <Button
             android:id="@+id/btn_view_photo_stream"
             android:layout_height="wrap_content"
-            android:text="Own Pictures" 
-            android:layout_width="200px" 
-            android:layout_x="60px" 
-            android:layout_y="320px"
+            android:text="Own" 
+            android:layout_width="66px" 
+            android:layout_x="126px" 
+            android:layout_y="310px"
 			android:onClick="viewProfile"/>
 	  <Button
             android:id="@+id/btn_view_photo_stream"
             android:layout_height="wrap_content"
-            android:text="My Favorites" 
-            android:layout_width="200px" 
-            android:layout_x="60px" 
-            android:layout_y="370px"
+            android:text="Fav" 
+            android:layout_width="66px" 
+            android:layout_x="192px" 
+            android:layout_y="310px"
 			android:onClick="viewFavorites"/>
 	  <Button
             android:id="@+id/btn_new_mission"
@@ -42,7 +51,7 @@
             android:text="New Mission" 
             android:layout_width="200px" 
             android:layout_x="60px" 
-            android:layout_y="420px"
+            android:layout_y="370px"
 			android:onClick="newMission"/>
 
 </AbsoluteLayout>

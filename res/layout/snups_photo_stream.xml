@@ -16,19 +16,20 @@
 		
 		<View android:id="@+id/webViewTopButtons"
 			android:layout_width="270px"  
-			android:layout_height="75px"/>
+			android:layout_height="40px"/>
 		
 		<TextView 
 	  		android:layout_width="wrap_content" 
 	  		android:id="@+id/txt_heading" 
 	  		android:layout_height="wrap_content" 
 	  		android:text="" 
-	  		android:textSize="20px">
+	  		android:textSize="19px"
+	  		android:textColor="#000">
 	  	</TextView>
-		  	
-		
-			
-		
+	  	
+	  	<View android:id="@+id/webViewSpacer"
+			android:layout_width="fill_parent"  
+			android:layout_height="20px"/>
 				
 		<WebView android:id="@+id/webView"
 			android:layout_width="fill_parent"  
@@ -36,6 +37,6 @@
 	
 		<View android:id="@+id/webViewButtons"
 			android:layout_width="fill_parent"  
-			android:layout_height="63px"/>
+			android:layout_height="65px"/>
 	</TableLayout>
 </AbsoluteLayout>

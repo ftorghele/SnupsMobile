@@ -37,7 +37,7 @@ public class SnupsStart extends Activity {
     	Uri uriUrl = Uri.parse("http://franzonrails.multimediatechnology.at/users/register");
     	Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl); 
     	startActivity(launchBrowser);          
-        finish();
+        //finish();
     }
     
     @Override
